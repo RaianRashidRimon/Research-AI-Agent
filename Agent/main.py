@@ -33,7 +33,6 @@ agent = create_react_agent(
 query = input("What do you want to research? ")
 raw_response = agent.invoke({"messages": [{"role": "user", "content": query}]})
 
-# Find the last message with actual text content
 content = ""
 for msg in reversed(raw_response["messages"]):
     raw = msg.content
@@ -51,7 +50,6 @@ for msg in reversed(raw_response["messages"]):
         content = extracted
         break
 
-# Strip markdown code fences if present
 if "```" in content:
     lines = content.splitlines()
     content = "\n".join(
