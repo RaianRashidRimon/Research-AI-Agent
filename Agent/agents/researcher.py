@@ -2,7 +2,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.output_parsers import PydanticOutputParser
 from langgraph.prebuilt import create_react_agent
 from pydantic import BaseModel
-from tools import search_tool, wiki_tool, read_tool
+from tools import search_tool, wiki_tool, read_tool, arxiv_tool
 
 class ResearchOutput(BaseModel):
     topic: str
@@ -16,9 +16,9 @@ def run_researcher(query: str, memory, thread_id: str, history: list) -> Researc
     system_prompt = """
     You are a specialist research agent. Your only job is to gather raw facts and data.
     - Search the web and Wikipedia for information
+    - Use the ArXiv tool to find relevant academic papers on the topic
     - Collect as many relevant facts as possible
-    - Always record your sources
-    - Do not hallucinate or make assumptions
+    - Always record your sources including paper titles and links
     - Do NOT write summaries or opinions — only facts
     - If the user references something from earlier in the conversation, use the read_from_file tool to recall past research
     Wrap the output in this format and provide no other text\n{format_instructions}
@@ -26,7 +26,7 @@ def run_researcher(query: str, memory, thread_id: str, history: list) -> Researc
 
     agent = create_react_agent(
         model=llm,
-        tools=[search_tool, wiki_tool, read_tool],
+        tools=[search_tool, wiki_tool, read_tool, arxiv_tool],
         prompt=system_prompt,
         checkpointer=memory,
     )
