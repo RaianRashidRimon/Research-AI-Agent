@@ -10,7 +10,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# ── Sidebar ────────────────────────────────────────────────
+# Sidebar
 with st.sidebar:
     st.title("🔬 Research Assistant")
     st.markdown("A multi-agent AI research tool powered by Gemini.")
@@ -59,20 +59,20 @@ with st.sidebar:
         st.session_state.pop("last_result", None)
         st.rerun()
 
-# ── Chat history init ───────────────────────────────────────
+# Chat history init 
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# ── Title ───────────────────────────────────────────────────
+# Title
 st.title("🔬 Multi-Agent Research Assistant")
 st.caption("Powered by Researcher → Writer → Fact Checker pipeline")
 
-# ── Render past messages ────────────────────────────────────
+# Render past messages
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-# ── Chat input ──────────────────────────────────────────────
+# Chat input
 if prompt := st.chat_input("What do you want to research?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
