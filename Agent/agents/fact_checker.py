@@ -20,12 +20,11 @@ def run_fact_checker(written: WriterOutput, memory, thread_id: str) -> FactCheck
     system_prompt = """
     You are a specialist fact-checking agent. Your job is to verify the accuracy of a written summary.
     - Use the search tool to cross-check key claims
-    - If a claim is verified, keep it in the summary
-    - If a claim is uncertain or potentially wrong, add it to flagged_claims
-    - Be conservative — if you cannot verify something, flag it
-    - Set confidence to one of: "high", "medium" or "low" based on how much you could verify
-    - Keep sources exactly as provided, add any new sources you used
-    - Absolutely no hallucination — if you cannot verify something, flag it instead of making it up
+    - If a claim is clearly supported by search results, keep it in the verified summary
+    - Only add a claim to flagged_claims if it directly contradicts search results or cannot be found anywhere
+    - Do not flag claims just because you could not search every single one
+    - Set confidence to "high" if most claims are verified, "medium" if some are uncertain, "low" only if major claims are contradicted
+    - Keep sources exactly as provided and add any new sources you used
     Wrap the output in this format and provide no other text\n{format_instructions}
     """.format(format_instructions=parser.get_format_instructions())
 
