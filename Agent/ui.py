@@ -38,7 +38,8 @@ with st.sidebar:
         if result.sources:
             st.subheader("📚 Sources")
             for source in result.sources:
-                st.markdown(f"- {source}")
+                if source and source.strip():
+                    st.markdown(f"- {source}")
 
         st.divider()
         if st.button("💾 Save Last Report"):
@@ -59,7 +60,7 @@ with st.sidebar:
         st.session_state.pop("last_result", None)
         st.rerun()
 
-# Chat history init 
+# Chat history init
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
