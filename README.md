@@ -26,3 +26,45 @@ Each with a focused role. Given a query, the serial pipeline autonomously search
 * Confidence scoring. HIGH, MEDIUM or LOW based on how much could be verified
 * Flagged claims. Uncertain or unverified statements are clearly highlighted
 * Save reports to a local text file
+
+## Setup & Installation
+
+### 1. Clone the repository
+
+    git clone https://github.com/RaianRashidRimon/repo.git
+
+### 2. Install dependencies
+
+    pip install -r requirements.txt
+
+### 3. Set up your API key
+
+Create a '.env' file in the root folder where
+
+GEMINI_API_KEY=your_own_gemini_api_key
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
