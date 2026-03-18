@@ -52,10 +52,18 @@ GEMINI_API_KEY=your_own_gemini_api_key
 
     streamlit run ui.py
 
+## Tech Stack
 
 
-
-
+| Technology | Purpose |
+|---|---|
+| **LangGraph** | Multi-agent management |
+| **LangChain** | Agent framework |
+| **Google Gemini** | Underlying LLMUnderlying LLM |
+| **Streamlit** | Web UI | 
+| **DuckDuckGo Search** | Web search tool |
+| **Wikipedia** | Encyclopedic search tool |
+| **ArXiv** | Academic paper search |
 
 
 
