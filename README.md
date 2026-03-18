@@ -31,7 +31,7 @@ Each with a focused role. Given a query, the serial pipeline autonomously search
 
 ### 1. Clone the repository
 
-    git clone https://github.com/RaianRashidRimon/repo.git
+    git clone https://github.com/RaianRashidRimon/Research-AI-Agent.git
 
 ### 2. Install dependencies
 
@@ -42,6 +42,15 @@ Each with a focused role. Given a query, the serial pipeline autonomously search
 Create a '.env' file in the root folder where
 
 GEMINI_API_KEY=your_own_gemini_api_key
+
+## Usage
+### Terminal Mode 
+
+    python main.py
+
+### Streamlit UI
+
+    streamlit run ui.py
 
 
 
