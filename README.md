@@ -66,6 +66,11 @@ GEMINI_API_KEY=your_own_gemini_api_key
 | **ArXiv** | Academic paper search |
 
 
+## Future Improvements
+1. Export research reports to PDF
+2. Add more academic paper sources
+
+
 
 
 
