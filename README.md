@@ -69,6 +69,9 @@ GEMINI_API_KEY=your_own_gemini_api_key
 ## Future Improvements
 1. Export research reports to PDF
 2. Add more academic paper sources
+3. Support for follow-up questions
+4. Better UI
+5. Option to choose which agents to run
 
 
 
