@@ -72,6 +72,7 @@ GEMINI_API_KEY=your_own_gemini_api_key
 3. Support for follow-up questions
 4. Better UI
 5. Option to choose which agents to run
+6. Support for other LLM providers
 
 
 
