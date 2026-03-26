@@ -73,6 +73,7 @@ GEMINI_API_KEY=your_own_gemini_api_key
 4. Better UI
 5. Option to choose which agents to run
 6. Support for other LLM providers
+7. Search history page to browse all past queries
 
 
 
